@@ -50,8 +50,6 @@ void get_dweet() {
 
 void send_dweet(String data) {
   Process dweet;
-  String final = "python dweet.py guid post \"" + data+ "\"";
-  Serial.println(final);
   dweet.runShellCommand("python /mnt/sda1/dweet/sdcard/dweet.py guid post \"" + data+ "\""); //{'sensor1':'0','sensor2':'1'}\"");  // upload the file we just wrote to to Dropbox
   while(dweet.available()) {
     char c=dweet.read();
